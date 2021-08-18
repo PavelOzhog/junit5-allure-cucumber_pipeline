@@ -1,0 +1,9 @@
+browser=remote
+base.url=https://www.sberbank.ru/ru/person
+
+webdriver.chrome.driver.windows=drv/chromedriver.exe
+webdriver.chrome.driver.linux=drv/chromedriverLinux.exe
+webdriver.gecko.driver=drv/geckodriver.exe
+
+implicitly.wait=15
+page.load.timeout=15
