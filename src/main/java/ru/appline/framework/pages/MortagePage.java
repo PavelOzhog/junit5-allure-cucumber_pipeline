@@ -135,7 +135,7 @@ public class MortagePage extends BasePage {
     public void fill(WebElement element, String value) {
         element.click();
         element.sendKeys(Keys.chord(Keys.CONTROL, "a"));
-        //wait.until(ExpectedConditions.textToBePresentInElementValue(costOfRealty,"defaultValue"));
+        //wait.until(ExpectedConditions.attributeToBe(costOfRealty,"defaultValue"));
         element.sendKeys(value);
     }
 
