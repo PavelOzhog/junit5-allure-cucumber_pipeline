@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {"pretty"},
+        plugin = {"ru.appline.framework.utils.MyAllureListener"},
         glue = {"ru.appline.framework.steps"},
         features = {"src/test/resources"},
         tags = {"@smoke"}
@@ -19,6 +19,7 @@ import org.junit.runner.RunWith;
 
 
 public class CucumberRunner {
+
 }
 
 

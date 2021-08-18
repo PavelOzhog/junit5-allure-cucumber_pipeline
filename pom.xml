@@ -31,7 +31,6 @@
         <aspectj.version>1.9.7</aspectj.version>
         <junit-vintage-engine.version>5.7.0</junit-vintage-engine.version>
 
-
     </properties>
 
     <dependencies>
@@ -81,12 +80,17 @@
             <version>${cucumber-junit.version}</version>
         </dependency>
 
+
+
+
         <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-cucumber5-jvm -->
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-cucumber5-jvm</artifactId>
-            <version>${allure-cucumber5-jvm.version}</version>
+            <version>2.14.0</version>
         </dependency>
+
+
 
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
@@ -127,7 +131,6 @@
                     <argLine>
                         -Dfile.encoding=${encoding.type}
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-
                     </argLine>
                     <systemPropertyVariables>
                         <allure.results.directory>${project.build.directory}/reports/allure-results
@@ -143,8 +146,6 @@
                     </dependency>
                 </dependencies>
             </plugin>
-
-
             <!-- Плагин, который отвечает за формирование сайта Allure отчета -->
             <plugin>
                 <groupId>io.qameta.allure</groupId>
@@ -158,7 +159,7 @@
                 <executions>
                     <execution>
                         <id>allure-plugin</id>
-                        <phase>install</phase>
+                        <phase>verify</phase>
                         <goals>
                             <goal>report</goal>
                         </goals>
