@@ -36,7 +36,7 @@ public class DriverManager {
 
     public WebDriver getDriver() {
         if (driver == null) {
-            switch (testPropManager.getProperty("browser")) {
+            switch (testPropManager.getProperty(TYPE_BROWSER)) {
                 case "firefox":
                     System.setProperty("webdriver.gecko.driver", testPropManager.getProperty("webdriver.gecko.driver"));
                     driver = new FirefoxDriver();
@@ -71,27 +71,8 @@ public class DriverManager {
     }
 
 
-    private void initDriver() {
-        if (OS.isFamilyWindows()) {
-            initDriverWindowsOsFamily();
-        } else if (OS.isFamilyMac()) {
-            initDriverMacOsFamily();
-        } else if (OS.isFamilyUnix()) {
-            initDriverUnixOsFamily();
-        }
-    }
 
-    private void initDriverWindowsOsFamily() {
-        initDriverWindowsOsFamily();
-    }
 
-    private void initDriverMacOsFamily() {
-        initDriverAnyOsFamily(PATH_GECKO_DRIVER_MAC, PATH_CHROME_DRIVER_MAC);
-    }
-
-    private void initDriverUnixOsFamily() {
-        initDriverAnyOsFamily(PATH_GECKO_DRIVER_UNIX, PATH_CHROME_DRIVER_UNIX);
-    }
 
     private void initDriverAnyOsFamily(String gecko, String chrome) {
         switch (testPropManager.getProperty(TYPE_BROWSER)) {
