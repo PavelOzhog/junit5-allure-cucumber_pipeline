@@ -3,7 +3,7 @@ def mvn = "/var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/3.6.3/bi
 pipeline {
     agent any
     parameters{
-        string(name='TAG', defaultValue:@smoke , description= 'тег для запуска')
+        string(name='TAG', defaultValue:'@smoke' , description= 'тег для запуска')
     }
     stages {
         stage('Build') {
